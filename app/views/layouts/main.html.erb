@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="shortcut icon" href="/images/favicon.ico"> -->
+  <title>SnappyQuiz| by Jonathan Wexler</title>
+  <%= stylesheet_link_tag "application", media:"all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render '/layouts/shim'%>
+</head>
+
+<body>
+  <%= render '/layouts/header' %>
+  <div class= "container">
+    <%= yield%> 
+      <br/>
+      <div class="col-md-8 col-md-offset-2 blue"> 
+        Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? 
+      </div>
+      
+  </div> 
+  <%= render '/layouts/footer' %>
+</body>
+
+
+</html>

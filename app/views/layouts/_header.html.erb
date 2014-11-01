@@ -1,0 +1,52 @@
+<div class="navbar navbar-static-top navbar-inner" role="navigation">
+  <div class= "container-fluid">
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+                  <div id="user_nav" class="nav pull-right">
+            <% if user_signed_in? %>
+            Signed in as <%= current_user.email %>. Not you?
+            <%= link_to "Sign out", "/"%>
+            <% else %>
+            <div id="signup">
+              <%= link_to("", "root", class:"sign_up") %>
+            </div>
+            <% end %>
+          </div>
+
+        <div class="navbar-header">
+          <a class="navbar-toggle collapsed brand" href="#" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><%= image_tag("SnappyQuizLogo.png", size: "180x70") %> </a>
+
+
+
+
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Play</a></li>
+            <li><a href="#">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Info <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+        </div><!-- /.navbar-collapse -->
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
