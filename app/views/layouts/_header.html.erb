@@ -1,51 +1,30 @@
-<div class="navbar navbar-static-top navbar-inner" role="navigation">
-  <div class= "container-fluid">
 
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-                  <div id="user_nav" class="nav pull-right">
-            <% if user_signed_in? %>
-            Signed in as <%= current_user.email %>. Not you?
-            <%= link_to "Sign out", "/"%>
-            <% else %>
-            <div id="signup">
-              <%= link_to("", "root", class:"sign_up") %>
-            </div>
-            <% end %>
-          </div>
+<div id="header" class="bg-blue has-dropdown">
+  <a class="sidebar-button show-for-small" id="sidebarButton" href="#sidebar">
+    <%= image_tag("SnappyQuizLogo.png", :class=> "main_logo", size: "200x70", alt: "Menu wht") %> 
+  </a>
 
-        <div class="navbar-header">
-          <a class="navbar-toggle collapsed brand" href="#" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><%= image_tag("SnappyQuizLogo.png", size: "180x70") %> </a>
+  <div class="row hide-for-small">
+    <div class="large-3 columns">
+      <%= image_tag("SnappyQuizLogo.png", :class=> "main_logo" , size: "200x70", alt: "Menu wht") %>
+    </div>
+    <div class="large-7 columns">
+      <a href="#" class="button secondary nav_buttons">Play</a>
+      <a href="#" class="button secondary nav_buttons">Pass</a>
+      <a href="#" class="button secondary nav_buttons">Connect</a>
+      <br class="clear_both" />
 
-
-
-
-
+    </div>
+    <div class="large-2 columns">
+      <div class="right">
+        <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>. Not you?
+        <%= link_to "Sign out", "/"%>
+        <% else %>
+        <div id="signup">
+          <%= link_to("", "root", class:"sign_up") %>
         </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Play</a></li>
-            <li><a href="#">About</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Info <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          
-        </div><!-- /.navbar-collapse -->
-
-
-
-
+        <% end %>
       </div>
     </div>
   </div>

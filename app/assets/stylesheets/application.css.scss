@@ -9,11 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap.min
+ *= require foundation_and_overrides
+ *= require custom
  *= require_tree .
  */
-
-body {
-
-	background-image:url("bright_squares_@2X.png"); 
-}

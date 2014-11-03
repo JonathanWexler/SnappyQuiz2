@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!-- <link rel="shortcut icon" href="/images/favicon.ico"> -->
-  <title>SnappyQuiz| by Jonathan Wexler</title>
-  <%= stylesheet_link_tag "application", media:"all" %>
-  <%= javascript_include_tag "application" %>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "SnappyQuiz | by Jonathan Wexler" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
   <%= render '/layouts/shim'%>
+
 </head>
 
 <body>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <%= render '/layouts/header' %>
-  <div class= "container">
-    <%= yield%> 
-      <br/>
-      <div class="col-md-8 col-md-offset-2 blue"> 
-        Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? Hello, How are you? 
-      </div>
-      
-  </div> 
+  <div class="row">
+    <div class="small-12 columns">
+      <%= yield %>
+    </div>
+  </div>
+  <%= javascript_include_tag "application" %>
+
   <%= render '/layouts/footer' %>
+
 </body>
-
-
 </html>
