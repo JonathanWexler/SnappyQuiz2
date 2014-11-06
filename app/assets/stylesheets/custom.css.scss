@@ -1,6 +1,6 @@
 body {
 
-	background-image:url("bright_squares_@2X.png"); 
+	background: image-url('bright_squares_@2X.png'); 
 }
 
 .test {
@@ -74,7 +74,8 @@ body {
 	width: 200px;
 	height: 55px;
 	margin-top: 17px;
-	background: url('/assets/signup.png') 0 -57px;
+	background: image-url('signup.png') 0 -57px;
+	/*background-image:  url('/assets/signup.png') 0 -57px;*/
 }
 
 .sign_up:after {
@@ -82,7 +83,7 @@ body {
 	display: inline-block;
 	width: 200px;
 	height: 55px;
-	background: url('/assets/signup.png') -1px 0;
+	background: image-url('signup.png') -1px 0;
 	opacity: 0;
 	-webkit-transition: opacity 1s;
 	-moz-transition:    opacity 1s;

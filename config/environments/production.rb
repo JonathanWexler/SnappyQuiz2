@@ -72,6 +72,10 @@ Snappyquiz2::Application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
+  config.serve_static_assets = true
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+  config.assets.compile = true
+
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
