@@ -1,0 +1,32 @@
+<h1>Start Quiz</h1>
+
+<%= form_tag({:controller => "quiz", :action => "start"}) do %>
+
+<p>
+	<%= label_tag(:number, "Select the length of your quiz:", :id => "question") %>
+</p>
+
+<!-- <p class="center">
+	<%= select_tag(:number, options_for_select((1..10).map {|x| [x, x]}), :id => "count") %>
+	<br />
+</p> -->
+
+
+<div class="row">
+	<div class="small-4 columns">
+	<%= submit_tag "5", name: "easy", :class => "submit button [secondary success alert] wide"%>
+	</div>
+	<div class="small-4 columns">
+	<%= submit_tag "10", name: "medium",:class => "submit button [secondary success alert] wide"%>
+	</div>
+	<div class="small-4 columns">
+	<%= submit_tag "15", name: "hard",:class => "submit button [secondary success alert] wide"%>
+	</div>
+</div>
+
+<% end %>
+
+<% content_for(:title) do %>
+	Start Quiz
+<% end %>
+

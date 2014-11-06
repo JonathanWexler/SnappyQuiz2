@@ -5,17 +5,17 @@
   </a>
 
   <div class="row hide-for-small">
-    <div class="large-3 columns">
+    <div class="small-3 columns">
       <%= image_tag("SnappyQuizLogo.png", :class=> "main_logo" , size: "200x70", alt: "Menu wht") %>
     </div>
-    <div class="large-7 columns">
-      <a href="#" class="button secondary nav_buttons">Play</a>
-      <a href="#" class="button secondary nav_buttons">Pass</a>
-      <a href="#" class="button secondary nav_buttons">Connect</a>
+    <div class="small-7 columns">
+      <%= link_to("Play", quiz_index_path, :class => "button secondary nav_buttons")%>
+      <%= link_to("Questions", questions_path, :class => "button secondary nav_buttons")%>
+      <%= link_to("Connect", questions_path, :class => "button secondary nav_buttons")%>
       <br class="clear_both" />
 
     </div>
-    <div class="large-2 columns">
+    <div class="small-2 columns">
       <div class="right">
         <% if user_signed_in? %>
         Signed in as <%= current_user.email %>. Not you?

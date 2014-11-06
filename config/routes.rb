@@ -1,7 +1,20 @@
 Snappyquiz2::Application.routes.draw do
   resources :questions
+  # resources :quiz
 
   devise_for :users
+
+  get "quiz/index"  
+  post "quiz/start"
+  get "quiz/question"
+  post "quiz/question"
+  post "quiz/answer"
+  get "quiz/end"
+  post "choices/create"
+  
+  post "choices/destroy"
+
+  get "questions/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

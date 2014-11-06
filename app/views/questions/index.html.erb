@@ -3,20 +3,21 @@
 <table>
   <thead>
     <tr>
-      <th>Quiz</th>
-      <th>Numer</th>
+      <th>Question</th>
+      <th>Number</th>
       <th>Text</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>O</th>
+      <th>-</th>
+      <th>X</th>
     </tr>
   </thead>
 
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= question.quiz %></td>
-        <td><%= question.numer %></td>
+
+        <td><%= question.text %></td>
+        <td><%= question.position %></td>
         <td><%= question.text %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
@@ -26,6 +27,10 @@
   </tbody>
 </table>
 
+<% content_for(:title) do %>
+  All Questions
+<% end %>
+
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'New Question', new_question_path, class: "button [secondary success alert]" %>
