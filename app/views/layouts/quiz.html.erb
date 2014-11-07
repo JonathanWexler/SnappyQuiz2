@@ -18,7 +18,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= render '/layouts/header' %>
-  <div class="row">
+  <div class="row buffer_bottom">
     <div class="small-12 columns">
       <div class="small-8 small-offset-2 columns text-center">
         <%= yield %>
@@ -26,8 +26,8 @@
     </div>
   </div>
   <%= javascript_include_tag "application" %>
-
-  <%= render '/layouts/footer' %>
 </div>
+  <%= render '/layouts/footer' %>
+<!-- </div> -->
 </body>
 </html>
