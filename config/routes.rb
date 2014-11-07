@@ -2,7 +2,16 @@ Snappyquiz2::Application.routes.draw do
   resources :questions
   # resources :quiz
 
-  devise_for :users
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }, :skip => [:sessions]
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
+  devise_scope :user do
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+
+  # devise_scope :user do
+  #   get 'sign_out', :to => 'devise/sessions#destroy' #, :as => :destroy_user_session
+  # end
 
   get "quiz/index"  
   post "quiz/start"

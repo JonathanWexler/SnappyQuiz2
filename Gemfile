@@ -19,6 +19,13 @@ gem 'foundation-rails'
 gem 'activerecord-session_store'
 gem 'acts_as_list'
 
+# gems for signing in
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-identity'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

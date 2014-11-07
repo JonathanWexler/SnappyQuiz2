@@ -5,6 +5,17 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = 'e8822ff868b390fec06f4ada4e4a261792baaef268eeb249124eabd318dc998325686f1fd5876db5403f20138c1bc322cbf5c40a0bf4dc6da0891565fb788b1b'
+  OmniAuth.config.logger = Rails.logger
+  config.omniauth :facebook, '117964625059882', 'ec6297cdc17bace782983fb6015acb21'
+  config.omniauth :twitter, 'RSwTwCXQTW639rD0kwxmhQ', 'cC3cLNmKBEgGrvQEzyPN6likKvIEVNEDnap1Dg5NA'
+
+  # Rails.application.config.middleware.use OmniAuth::Builder do
+    # provider :facebook, '117964625059882', 'ec6297cdc17bace782983fb6015acb21'
+    # provider :twitter, 'RSwTwCXQTW639rD0kwxmhQ', 'cC3cLNmKBEgGrvQEzyPN6likKvIEVNEDnap1Dg5NA'
+    # provider :google_oauth2, '123139479263.apps.googleusercontent.com', '07oh0tKWvxrAb0sbuaKFGV6w'
+    # provider :identity, on_failed_registration: lambda { |env|    
+      # IdentitiesController.action(:new).call(env)}
+  # end
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,

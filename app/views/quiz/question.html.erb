@@ -1,50 +1,19 @@
-
+<hr/>
 <h1>Question <%= @current + 1 %> of <%= @total %></h1>
+<hr/>
 <p id="question"><%= @question.text %></p>
 
 <%= form_tag({:controller => "quiz", :action => "answer"}) do %>
 <% @choices.each do |choice| %>
 <p class="choice">
 	<%= submit_tag(choice.text, :name => "edit[#{choice.id}]", :class => "submit_button") %> 
-	<%# submit_tag(:choice, value: choice.id)%>
-	<%# radio_button_tag(:choice, choice.id) %>
-	<%# label_tag("choice_".concat(choice.id.to_s).to_sym, choice.text) %>
+
+
 </p>
 <% end %>
 
-<!--    <div class="center">
-	 <%= submit_tag("Continue", :class => "submit") %>
-	</div>  -->
 	<% end %>
 
 	<% content_for(:title) do %>
 	Question <%= @current + 1 %> of <%= @total %>
 	<% end %>
-
-
-<!-- 	<div class="responsespace" data-type="2">
-
-		<form accept-charset="UTF-8" action="/tasks/349/complete" data-remote="true" id="challenge_form" method="post">
-			<div style="margin:0;padding:0;display:inline">
-				<input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put">
-			</div>
-			<input id="points_remaining" name="points_remaining" type="hidden" value="60">
-			<input id="streak" name="streak" type="hidden" value="0">
-			<ol style="list-style-position: inside; margin-left: 0px;">
-				<li class="answer_content" data-answer="Neither" data-order="0" style="cursor: pointer;">
-					<input id="answer_Neither" name="answer" style="display: none;" type="radio" value="Neither">
-					<span>Neither</span>
-				</li>
-				<li class="answer_content" data-answer="Post" data-order="1" style="cursor: pointer; background-color: rgb(255, 153, 153); color: white;">
-					<input id="answer_Post" name="answer" style="display: none;" type="radio" value="Post" checked="checked">
-					<span>Post</span>
-				</li>
-				<li class="answer_content" data-answer="Comment" data-order="2" style="cursor: pointer; background-color: rgba(104, 231, 104, 0.792157); color: white;">
-					<input id="answer_Comment" name="answer" style="display: none;" type="radio" value="Comment">
-					<span>Comment</span>
-				</li>
-			</ol>
-
-
-			<a class="hide submit_button" href="/sections/60/continue/1415275675" id="nextbutton" onclick="$(this).addClass(&quot;disabled&quot;).attr(&quot;disabled&quot;, &quot;disabled&quot;); return true;" rel="nofollow" style="float: right; width: inherit; display: inline;">Next</a>
-		</form></div> -->

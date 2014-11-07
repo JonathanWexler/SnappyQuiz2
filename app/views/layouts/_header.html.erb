@@ -6,7 +6,7 @@
 
   <div class="row hide-for-small">
     <div class="small-3 columns">
-      <%= image_tag("SnappyQuizLogo.png", :class=> "main_logo" , size: "200x70", alt: "Menu wht") %>
+      <%= link_to(image_tag("SnappyQuizLogo.png", :class=> "main_logo" , size: "200x70", alt: "Menu wht"), root_path) %>
     </div>
     <div class="small-7 columns">
       <%= link_to("Play", quiz_index_path, :class => "button secondary nav_buttons")%>
@@ -18,11 +18,13 @@
     <div class="small-2 columns">
       <div class="right">
         <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. Not you?
-        <%= link_to "Sign out", "/"%>
+        <div style="margin-top: 10px;">
+        Signed in as <%= current_user.name %>. Not you?
+        <%= link_to "Sign out", "/sign_out"%>
+        </div>
         <% else %>
         <div id="signup">
-          <%= link_to("", "root", class:"sign_up") %>
+          <%= link_to("", user_omniauth_authorize_path(:facebook), class:"sign_up") %>
         </div>
         <% end %>
       </div>

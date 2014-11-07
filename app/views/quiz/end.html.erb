@@ -1,11 +1,14 @@
+<hr/>
 <h1>Quiz Results</h1>
+<hr/>
+
 <p id="question">You answered <%= @correct %> out of <%= @total %> questions correctly.</p>
 
 <p id="score"><%= @score %>%</p>
 
 <%= form_tag({:controller => "quiz", :action => "index"}, :method => "get") do %>
   <div class="center">
-	 <%= submit_tag("Take another quiz", :class => "submit button [secondary success alert] wide") %>
+	 <%= submit_tag("Try Again", :class => "button [secondary success alert] wide") %>
   </div>
 <% end %>
 
