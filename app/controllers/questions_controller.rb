@@ -1,12 +1,13 @@
 class QuestionsController < ApplicationController
   layout 'quiz'
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
-    @questions.sort! {|a,b| a.text <=> b.text}
+    @questions = Question.order(sort_column + " " + sort_direction)
+    # @questions.sort! {|a,b| a.text <=> b.text}
 
     respond_to do |format|
       format.html # index.html.erb
@@ -90,5 +91,12 @@ class QuestionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
       params.require(:question).permit(:quiz_id, :numer, :text)
+    end
+
+    def sort_column
+      Question.column_names.include?(params[:sort]) ? params[:sort] : "position"
+    end
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

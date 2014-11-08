@@ -3,25 +3,24 @@
 <table>
   <thead>
     <tr>
-      <th>Question</th>
-      <th>Number</th>
-      <th>Text</th>
-      <th>O</th>
-      <th>-</th>
-      <th>X</th>
+      <th><%= link_to("Number", sort: "position") %></th>
+      <th><%= link_to("Question", sort: "text") %></th>
+      <th><%= link_to("Text", sort: "text") %></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-
-        <td><%= question.text %></td>
         <td><%= question.position %></td>
         <td><%= question.text %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= question.text %></td>
+        <td><%= link_to 'Show', question, class: "button small secondary wide" %></td>
+        <td><%= link_to 'Edit', edit_question_path(question), class: "button small secondary wide" %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "button small secondary alert wide"%></td>
       </tr>
     <% end %>
   </tbody>

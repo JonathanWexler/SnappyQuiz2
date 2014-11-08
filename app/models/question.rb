@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
   # belongs_to :quiz
   has_many :choices
-  acts_as_list
+  acts_as_list -> { order("position ASC") }
   
   def answer
 	 uncorrect
