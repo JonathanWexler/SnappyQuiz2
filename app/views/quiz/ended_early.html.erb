@@ -1,0 +1,16 @@
+<body>
+	<div class="text-center" style="margin-top:40px;">
+		<a class="brand" href="index"><%= image_tag("SnappyQuizEndedEarly.png", class: "brand") %> </a>
+	</div>
+	<!-- This file lives in public/404.html -->
+	<div class="dialog text-center white_block buffer_bottom">
+		<p id="question">You answered <%= @correct %> out of <%= @total %> questions correctly.</p>
+		<p>Your scores will not be saved...</p>
+		<%= form_tag({:controller => "quiz", :action => "index"}, :method => "get") do %>
+		<div class="center">
+			<%= submit_tag("Try Again", :class => "button [secondary success alert] wide") %>
+		</div>
+		<% end %>
+	</div>
+
+</body>

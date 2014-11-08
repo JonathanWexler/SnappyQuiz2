@@ -3,11 +3,21 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
+# Use sqlite3 as the database for Active Record, using PG instead
 # gem 'sqlite3'
+gem 'pg'
+
+# For user authentication
+gem 'devise'
+
+# This is for chatroom functionality
+gem "private_pub"
+gem "thin"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+
+# This is for functionality in heroku assets
 gem 'rails_12factor'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -43,8 +53,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'devise'
-gem 'pg'
+gem 'quiet_assets', group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

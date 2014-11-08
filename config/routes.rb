@@ -1,4 +1,7 @@
 Snappyquiz2::Application.routes.draw do
+  get "errors/file_not_found"
+  get "errors/unprocessable"
+  get "errors/internal_server_error"
   resources :questions
   # resources :quiz
 
@@ -12,7 +15,7 @@ Snappyquiz2::Application.routes.draw do
   # devise_scope :user do
   #   get 'sign_out', :to => 'devise/sessions#destroy' #, :as => :destroy_user_session
   # end
-
+  get "quiz/ended_early"
   get "quiz/index"  
   post "quiz/start"
   get "quiz/question"
@@ -78,4 +81,8 @@ Snappyquiz2::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  match '/404', to: 'errors#file_not_found', via: :all
+  match '/422', to: 'errors#unprocessable', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
 end

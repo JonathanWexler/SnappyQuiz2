@@ -1,14 +1,13 @@
 <hr/>
 <h1>Question <%= @current + 1 %> of <%= @total %></h1>
 <hr/>
+<div id="quiz"></div>
 <p id="question"><%= @question.text %></p>
 
-<%= form_tag({:controller => "quiz", :action => "answer"}) do %>
+<%= form_tag({:controller => "quiz", :action => "answer", :question => @question.id}) do %>
 <% @choices.each do |choice| %>
 <p class="choice">
-	<%= submit_tag(choice.text, :name => "edit[#{choice.id}]", :class => "submit_button") %> 
-
-
+	<%= submit_tag(choice.text, :name => "keep[#{choice.id}]", :class => "submit_button") %> 
 </p>
 <% end %>
 

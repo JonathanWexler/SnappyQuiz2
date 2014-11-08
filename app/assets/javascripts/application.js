@@ -14,6 +14,36 @@
 //= require jquery_ujs
 //= require foundation
 //= require bootstrap.min
+//= require private_pub
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+// function checkFirstVisit() {
+//   if(document.cookie.indexOf('mycookie')==-1) {
+//     // cookie doesn't exist, create it now
+//     document.cookie = 'mycookie=1';
+//   }
+//   else {
+//     // not first visit, so alert
+//     alert('You refreshed!');
+//   }
+// }
+
+// window.onbeforeunload = function() { return "You work will be lost."; };
+
+// $(window).bind('beforeunload', function(){
+
+// 	if (document.getElementById("quiz")!=null) {
+// 		return window.lastElementClicked = event.target;;
+// 	} else {
+
+// 	}
+  
+// });
+
+// if($('#yourhiddenfield_id').length > 0)
+// {
+// 	window.onbeforeunload = function() { 	  return "You work will be lost."; };
+// }
+
