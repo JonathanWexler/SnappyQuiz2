@@ -14,6 +14,9 @@ gem 'devise'
 gem "private_pub"
 gem "thin"
 
+# Facebook API
+gem "koala", "~> 1.10.0rc"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

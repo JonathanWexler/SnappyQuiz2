@@ -1,18 +1,19 @@
 class UsersController < ApplicationController
 	layout 'main'
 
-
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users/:id.:format
   def show
     # authorize! :read, @user
-end
+    # Not implemented yet
+  end
 
   # GET /users/:id/edit
   def edit
     # authorize! :update, @user
-end
+    # Not implemented yet
+  end
 
   # PATCH/PUT /users/:id.:format
   def update
@@ -27,7 +28,7 @@ end
     		format.json { render json: @user.errors, status: :unprocessable_entity }
     	end
     end
-end
+  end
 
   # GET/PATCH /users/:id/finish_signup
   def finish_signup
@@ -41,7 +42,7 @@ end
     		@show_errors = true
     	end
     end
-end
+  end
 
   # DELETE /users/:id.:format
   def destroy
@@ -51,16 +52,16 @@ end
     	format.html { redirect_to root_url }
     	format.json { head :no_content }
     end
-end
+  end
 
-private
-def set_user
-	@user = User.find(params[:id])
-end
+  private
+  def set_user
+   @user = User.find(params[:id])
+  end
 
-def user_params
+  def user_params
       accessible = [ :name, :email ] # extend with your own params
       accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
       params.require(:user).permit(accessible)
-end
-end
+    end
+  end
