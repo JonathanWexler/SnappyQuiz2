@@ -20,12 +20,13 @@
         <% if user_signed_in? %>
         <div style="margin-top: 10px;">
         Signed in as <%= current_user.name %>. Not you?
-        <%= link_to "Sign out", "/sign_out"%>
+        <%= link_to "Sign out", destroy_user_session_path%>
         </div>
         <% else %>
         <div id="signup">
-          <%= link_to("", user_omniauth_authorize_path(:facebook), class:"sign_up") %>
+          <%= link_to("", new_user_registration_path, class:"sign_up") %>
         </div>
+          <%= link_to(image_tag("fb_sign_in.png", :style=> "margin-top:-15px;" , size: "200x70", alt: "Menu wht"), user_omniauth_authorize_path(:facebook)) %>
         <% end %>
       </div>
     </div>

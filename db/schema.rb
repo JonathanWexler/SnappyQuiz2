@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107204317) do
+ActiveRecord::Schema.define(version: 20141113072118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,9 @@ ActiveRecord::Schema.define(version: 20141107204317) do
 
   add_index "questions", ["quiz_id"], name: "index_questions_on_quiz_id", using: :btree
 
+  create_table "quiz_questions_joins", force: true do |t|
+  end
+
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
     t.text     "data"
@@ -80,6 +83,7 @@ ActiveRecord::Schema.define(version: 20141107204317) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
+    t.string   "fb_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

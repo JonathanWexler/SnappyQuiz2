@@ -1,20 +1,35 @@
 Snappyquiz2::Application.routes.draw do
-  get "errors/file_not_found"
-  get "errors/unprocessable"
-  get "errors/internal_server_error"
+
+
   resources :questions
   # resources :quiz
 
-  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }, :skip => [:sessions]
-  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
-
-  devise_scope :user do
-    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' } do
+    # get '/users/sign_out' => 'devise/sessions#destroy'
   end
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  # devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  # match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
+  # devise_scope :user do
+  #   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
 
   # devise_scope :user do
   #   get 'sign_out', :to => 'devise/sessions#destroy' #, :as => :destroy_user_session
   # end
+
+  # ERROR PAGES
+  get "errors/file_not_found"
+  get "errors/unprocessable"
+  get "errors/internal_server_error"
+  match '/404', to: 'errors#file_not_found', via: :all
+  match '/422', to: 'errors#unprocessable', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
+
+  # QUIZ PAGES 
   get "quiz/ended_early"
   get "quiz/index"  
   post "quiz/start"
@@ -22,10 +37,12 @@ Snappyquiz2::Application.routes.draw do
   post "quiz/question"
   post "quiz/answer"
   get "quiz/end"
+
+  # CHOICE PAGES
   post "choices/create"
-  
   post "choices/destroy"
 
+  # QUESTION PAGES
   get "questions/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -82,7 +99,5 @@ Snappyquiz2::Application.routes.draw do
   #     resources :products
   #   end
 
-  match '/404', to: 'errors#file_not_found', via: :all
-  match '/422', to: 'errors#unprocessable', via: :all
-  match '/500', to: 'errors#internal_server_error', via: :all
+
 end

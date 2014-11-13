@@ -12,6 +12,14 @@ module Snappyquiz2
    config.assets.initialize_on_precompile = false
    config.exceptions_app = self.routes
    
+
+   config.to_prepare do
+    Devise::SessionsController.layout "main"
+    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "main" : "quiz" }
+    Devise::ConfirmationsController.layout "main"
+    Devise::UnlocksController.layout "main"            
+    Devise::PasswordsController.layout "main"        
+  end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
