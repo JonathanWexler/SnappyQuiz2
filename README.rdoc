@@ -1,3 +1,5 @@
 == SnappyQuiz(2)
 
 This Ruby on Rails application was originally created a couple years ago. It has been slightly modified and redesigned. The purpose of the app is to demonstrate usage of the Rails MVC in a quiz game. You may login using Devise and create questions and answers using Rails' easy-to-use model generator.
+
+A demo of the app is available at snappyquiz.com.
